@@ -9,11 +9,11 @@ function agregarAmigo(){
         amigos.push(nombre);
         document.getElementById("amigo").value = "";
         mostrarAmigos();
-        console.log(amigos);
     }else{
         alert("El nombre no puede estar vacío");
     }
 }
+
 
 function mostrarAmigos(){
     let listaAmigos = document.getElementById("listaAmigos");
@@ -24,5 +24,13 @@ function mostrarAmigos(){
         listaAmigos.appendChild(li);
     }
 }
+    
 
-mostrarAmigos();
+
+
+function sortearAmigo(){
+    let resultado = document.getElementById("resultado");
+    resultado.innerHTML = "";
+    let amigo = Math.floor(Math.random()*amigos.length)+1;
+    resultado.innerHTML = amigos[amigo-1];
+}
