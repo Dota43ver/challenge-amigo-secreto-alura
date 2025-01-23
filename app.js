@@ -8,9 +8,21 @@ function agregarAmigo(){
     if(nombre.trim().length > 0){
         amigos.push(nombre);
         document.getElementById("amigo").value = "";
-        //mostrarAmigos();
+        mostrarAmigos();
         console.log(amigos);
     }else{
         alert("El nombre no puede estar vacío");
     }
 }
+
+function mostrarAmigos(){
+    let listaAmigos = document.getElementById("listaAmigos");
+    listaAmigos.innerHTML = "";
+    for(let i = 0; i <amigos.length; i++){
+        let li = document.createElement("li");
+        li.innerText = amigos[i];
+        listaAmigos.appendChild(li);
+    }
+}
+
+mostrarAmigos();
